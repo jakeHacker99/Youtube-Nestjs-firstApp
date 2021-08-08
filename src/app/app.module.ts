@@ -1,15 +1,12 @@
-import { TeacherService } from './../teacher/teacher.service';
+
 /* eslint-disable prettier/prettier */
-import { StudentService } from './../student/student.service';
-import { StudentTeacherController } from './../teacher/student.controller';
-import { TeacherController } from './../teacher/teacher.controller';
-import { StudentController } from './../student/student.controller';
 import { Module } from '@nestjs/common';
+import { TeacherModule } from '../teacher/teacher.module';
+import { StudentModule } from './../student/student.modules';
 
 
 @Module({
-  imports: [],
-  controllers: [StudentController, TeacherController, StudentTeacherController],
-  providers: [StudentService, TeacherService],
+  imports: [StudentModule, TeacherModule],
+
 })
 export class AppModule { }
