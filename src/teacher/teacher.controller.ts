@@ -1,8 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { TeacherService } from './teacher.service';
 import { findTeacherResDto } from './dto/teacher.dto';
-import { Controller, Get, Param } from '@nestjs/common';
-
+import { Controller, Get, Param, ParseUUIDPipe } from '@nestjs/common';
 
 @Controller('teachers')
 export class TeacherController {
@@ -13,7 +12,7 @@ export class TeacherController {
     }
 
     @Get('/:teacherId')
-    getTeacherById(@Param("teacherId") teacherId: string): findTeacherResDto {
+    getTeacherById(@Param("teacherId", new ParseUUIDPipe()) teacherId: string): findTeacherResDto {
         return this.teacherService.getTeacherById(teacherId)
     }
 

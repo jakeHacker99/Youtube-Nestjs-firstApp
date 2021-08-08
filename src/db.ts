@@ -35,5 +35,9 @@ export const teachers = [
     {
         id: "1c250754-b656-11eb-8529-0242ac130003",
         name: "Mr Wade"
+    },
+    {
+        id: "1c250754-b653-11eb-8529-0242ac130003",
+        name: "Mr Yaro"
     }
 ]
